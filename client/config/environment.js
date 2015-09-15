@@ -43,14 +43,15 @@ module.exports = function(environment) {
 
   }
 
-  ENV.contentSecurityPolicy = {  
+  ENV.contentSecurityPolicy = {
     'default-src': "'none'",
-    'script-src': "'self'",
-    'font-src': "'self'",
+    'script-src': "'self' 'unsafe-eval' https://*.googleapis.com https://*.gstatic.com",
+    'font-src': "'self' https://*.gstatic.com",
     'connect-src': "'self' http://localhost:3000",
-    'img-src': "'self'",
-    'style-src': "'self'",
-    'media-src': "'self'"
+    'img-src': "'self' https://*.googleapis.com https://*.gstatic.com",
+    'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com",
+    'media-src': "'self' 'unsafe-inline' https://*.googleapis.com"
+
   };
 
   return ENV;
