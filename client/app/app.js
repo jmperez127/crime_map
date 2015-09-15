@@ -5,6 +5,12 @@ import config from './config/environment';
 
 var App;
 
+  Ember.Handlebars.registerHelper('debug', function(the_string){
+    Ember.Logger.log(the_string);
+    // or simply
+    console.log(the_string);
+  });
+
 Ember.MODEL_FACTORY_INJECTIONS = true;
 
 App = Ember.Application.extend({
